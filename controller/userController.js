@@ -1,6 +1,6 @@
 const userService = require('../service/userService');
 const HttpException = require('../utils/httpException');
-const successResponse = require('../utils/successResponse');
+const successResponse = require('../utils/successresponse');
 const {registerSchema, loginSchema} = require('../validations/authValidation');
 const STATUSCODES = require('../constants/statuscode');
 const {jwtSign} = require('../utils/jwts');

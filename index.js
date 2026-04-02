@@ -10,8 +10,8 @@ const morgan = require('morgan');
 const sanitizeInput = require('./utils/sanitize');
 const indexRouter = require("./routes/index");
 const Logger = require('./middleware/log');
-const connectDB = require('./config/db');
-require('dotenv').config();
+const connectDB = require('./config/db')
+require('dotenv').config()
 
 connectDB();
 
