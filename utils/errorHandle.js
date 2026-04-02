@@ -1,5 +1,5 @@
 const { ZodError } = require("zod");
-const HttpException = require("./HttpException");
+const HttpException = require("./httpException");
 const Logger = require("../middleware/log");
 
 const formatZodError = (error) => {
