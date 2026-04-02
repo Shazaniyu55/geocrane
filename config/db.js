@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 require('dotenv').config();
 
 const connectDB = async () => {
-    const MONGODB_URI = process.env.MONGO_URI;
+    const MONGODB_URI = process.env.geocrane_MONGO_URI;
   
     try {
       if (!MONGODB_URI) return;

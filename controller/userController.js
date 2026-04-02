@@ -1,5 +1,5 @@
 const userService = require('../service/userService');
-const HttpException = require('../utils/HttpException');
+const HttpException = require('../utils/httpException');
 const successResponse = require('../utils/successResponse');
 const {registerSchema, loginSchema} = require('../validations/authValidation');
 const STATUSCODES = require('../constants/statuscode');
