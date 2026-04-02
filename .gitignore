@@ -1,0 +1,8 @@
+node_modules
+.env
+.env*
+/dist
+logs
+deploy.log
+firebase-service-account.json
+firebase-debug.log
