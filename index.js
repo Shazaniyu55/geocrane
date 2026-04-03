@@ -10,8 +10,15 @@ const morgan = require('morgan');
 const sanitizeInput = require('./utils/sanitize');
 const indexRouter = require("./routes/index");
 const Logger = require('./middleware/log');
-const connectDB = require('./config/db')
+const connectDB = require('./config/db');
+const http = require("http");
+const { initSocket } = require("./config/socket");
 require('dotenv').config()
+
+const server = http.createServer(app);
+
+// initialize socket
+initSocket(server);
 
 connectDB();
 
@@ -41,6 +48,6 @@ app.get('/', (req, res) => {
 });
 
 
-app.listen(port, ()=>{
+server.listen(port, ()=>{
     console.log(`server running at http://localhost:${port}`)
 });

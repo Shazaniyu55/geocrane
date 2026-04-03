@@ -24,8 +24,15 @@ const UserSchema = new Schema(
     otpExpiresAt: {
       type: Date,
     },
-    location: {
-      type: String,
+       location: {
+      type: {
+        type: String,
+        enum: ["Point"],
+      },
+      coordinates: {
+        type: [Number], // [lng, lat]
+      },
+      address: String,
     },
     email: {
       type: String,
@@ -65,5 +72,6 @@ const UserSchema = new Schema(
   { timestamps: true }
 );
 
+UserSchema.index({ location: "2dsphere" });
 const User = mongoose.model("User", UserSchema);
 module.exports = User;

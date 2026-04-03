@@ -96,14 +96,20 @@ const userController = {
 
     },
 
-    reportIncident: async(req, res)=>{
+    updateUserLocation: async(req, res)=>{
+      try {
+        const userId = req.user.userId;
+        const {location}= req.body;
+         const loc = await userService.updateUser(userId, {location: location});
 
+         successResponse(res, loc, "location updated successfully", STATUSCODES.SUCCESS)
+
+      } catch (error) {
+        console.log(error)
+      }
     },
 
-    createSosAlert: async(req, res)=>{
-
-    },
-
+    
     getUserProfile: async (req, res) => {
     const userId = req.user.userId; // Assuming user ID is available in req.user from auth middleware
     const user = await userService.getUserById(userId);
